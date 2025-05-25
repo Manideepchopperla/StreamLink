@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const authRoutes = require('./routes/authRoutes');
+<<<<<<< HEAD
+=======
+const roomRoutes = require('./routes/roomRoutes');
+>>>>>>> 092613f (added createRoom and joinRoom)
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,5 +31,10 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/StreamLink'
     });
 
 
+<<<<<<< HEAD
 app.use("/api/auth",authRoutes)
+=======
+app.use("/api/auth",authRoutes);
+app.use("/api/room",roomRoutes);
+>>>>>>> 092613f (added createRoom and joinRoom)
 
