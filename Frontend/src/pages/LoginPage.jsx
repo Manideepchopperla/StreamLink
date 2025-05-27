@@ -36,10 +36,7 @@ const Login = () => {
         dispatch(addUser(res.data));
         console.log(res.data.user);
         toast.success('Login successful!');
-<<<<<<< HEAD
-=======
-        navigate("/dashboard")
->>>>>>> 092613f (added createRoom and joinRoom)
+        navigate("/dashboard");
     } catch (err) {
         const errors = err.response?.data?.message;
         

@@ -19,7 +19,7 @@ exports.createRoom = async (req, res) => {
       active: true
     });
 
-    await newRoom.save();
+    await newRoom.save(); 
 
     res.status(201).json({
       roomId,
