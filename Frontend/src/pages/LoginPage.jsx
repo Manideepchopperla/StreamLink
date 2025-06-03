@@ -36,7 +36,7 @@ const Login = () => {
         dispatch(addUser(res.data));
         console.log(res.data.user);
         toast.success('Login successful!');
-        navigate("/dashboard");
+        navigate("/");
     } catch (err) {
         const errors = err.response?.data?.message;
         

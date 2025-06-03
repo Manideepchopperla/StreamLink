@@ -1,8 +1,23 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [activeForm, setActiveForm] = useState(null);
   const [moved, setMoved] = useState(false);
+  const [roomName,setRoomName] = useState()
+  const [roomId,setRoomId] = useState()
+  const [name,setName] = useState()
+  const navigate = useNavigate()
+
+  const handleCreateRoom = (e) => {
+    e.preventDefault()
+    navigate(`/room/${roomId}`)
+  }
+
+  const handleJoinRoom = (e) => {
+    e.preventDefault()
+    navigate(`/room/${roomId}`)
+  }
 
   const handleClick = (form) => {
     if (!moved) {
@@ -58,15 +73,20 @@ const HomePage = () => {
                   type="text"
                   placeholder="Room Name"
                   className="w-full px-4 py-2 border rounded"
+                  value={roomName}
+                  onChange = {(e)=>setRoomName(e.target.value)}
                 />
                 <input
                   type="text"
                   placeholder="Your Name"
                   className="w-full px-4 py-2 border rounded"
+                  value={name}
+                  onChange = {(e)=>setName(e.target.value)}
                 />
                 <button
                   type="submit"
                   className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+                  onClick={handleCreateRoom}
                 >
                   Create
                 </button>
@@ -78,15 +98,20 @@ const HomePage = () => {
                   type="text"
                   placeholder="Room Code"
                   className="w-full px-4 py-2 border rounded"
+                  value={roomId}
+                  onChange = {(e)=>setRoomId(e.target.value)}
                 />
                 <input
                   type="text"
                   placeholder="Your Name"
                   className="w-full px-4 py-2 border rounded"
+                  value={name}
+                  onChange = {(e)=>setName(e.target.value)}
                 />
                 <button
                   type="submit"
                   className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
+                  onClick={handleJoinRoom}
                 >
                   Join
                 </button>

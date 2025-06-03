@@ -37,7 +37,7 @@ const Register = () => {
         const res = await axios.post(import.meta.env.VITE_BASE_URL+`/auth/register`, formData);
         dispatch(addUser(res.data));
         toast.success('Registration successful!');
-        navigate('/dashboard');
+        navigate('/');
     } catch (err) {
         const errors = err.response?.data?.message;
         
